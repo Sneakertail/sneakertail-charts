@@ -1,0 +1,43 @@
+global:
+  namespace: dev
+  storageClass: ""
+
+frontend:
+  image:
+    repository: sneakertail/frontend
+    tag: latest
+
+auth-service:
+  image:
+    repository: sneakertail/auth-service
+    tag: latest
+
+product-service:
+  image:
+    repository: sneakertail/product-service
+    tag: latest
+
+interaction-service:
+  image:
+    repository: sneakertail/interaction-service
+    tag: latest
+
+payment-service:
+  image:
+    repository: sneakertail/payment-service
+    tag: latest
+
+raffle-service:
+  image:
+    repository: sneakertail/raffle-service
+    tag: latest
+
+postgres:
+  persistence:
+    storageClass: ""
+    size: 8Gi
+
+redis:
+  persistence:
+    storageClass: ""
+    size: 2Gi

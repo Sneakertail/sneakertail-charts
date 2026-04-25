@@ -1,0 +1,41 @@
+replicaCount: 1
+
+image:
+  repository: sneakertail/product-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+rollout:
+  autoPromotionEnabled: false
+  previewReplicaCount: 1
+  scaleDownDelaySeconds: 30
+
+service:
+  type: ClusterIP
+  port: 3002
+  targetPort: 3002
+
+config:
+  enabled: true
+  data:
+    PORT: "3002"
+    DB_HOST: "postgres"
+    DB_USER: admin
+    DB_NAME: sneakerdb
+
+secret:
+  enabled: true
+  stringData:
+    DB_PASSWORD: devpassword
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

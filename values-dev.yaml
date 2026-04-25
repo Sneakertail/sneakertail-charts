@@ -1,0 +1,80 @@
+global:
+  namespace: dev
+
+frontend:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi
+
+auth-service:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi
+
+product-service:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi
+
+interaction-service:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi
+
+payment-service:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi
+
+raffle-service:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi
+
+postgres:
+  resources:
+    requests:
+      cpu: 150m
+      memory: 192Mi
+    limits:
+      cpu: 350m
+      memory: 384Mi
+
+redis:
+  resources:
+    requests:
+      cpu: 75m
+      memory: 96Mi
+    limits:
+      cpu: 200m
+      memory: 192Mi

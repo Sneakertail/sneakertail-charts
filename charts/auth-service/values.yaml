@@ -1,0 +1,42 @@
+replicaCount: 1
+
+image:
+  repository: sneakertail/auth-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+rollout:
+  autoPromotionEnabled: false
+  previewReplicaCount: 1
+  scaleDownDelaySeconds: 30
+
+service:
+  type: ClusterIP
+  port: 3001
+  targetPort: 3001
+
+config:
+  enabled: true
+  data:
+    PORT: "3001"
+    DB_HOST: "postgres"
+    DB_USER: admin
+    DB_NAME: sneakerdb
+
+secret:
+  enabled: true
+  stringData:
+    DB_PASSWORD: devpassword
+    JWT_SECRET: secretkey
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

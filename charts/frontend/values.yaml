@@ -1,0 +1,49 @@
+replicaCount: 2
+
+image:
+  repository: sneakertail/frontend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+rollout:
+  autoPromotionEnabled: false
+  previewReplicaCount: 1
+  scaleDownDelaySeconds: 30
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+nginx:
+  defaultConf: |
+    server {
+        listen 80;
+        server_name _;
+        root /usr/share/nginx/html;
+        index index.html;
+
+        gzip on;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
+
+        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2?)$ {
+            expires 1y;
+            add_header Cache-Control "public, immutable";
+        }
+    }
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
