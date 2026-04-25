@@ -7,17 +7,9 @@ spec:
   parentRefs:
   - name: kgateway
     namespace: dev
+  hostnames:
+  - "headlamp.sneakertail.online"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    filters:
-    - type: URLRewrite
-      urlRewrite:
-        path:
-          type: ReplacePrefixMatch
-          replacePrefixMatch: /
-    backendRefs:
+  - backendRefs:
     - name: my-headlamp
       port: 80
