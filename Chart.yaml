@@ -1,5 +1,5 @@
 apiVersion: v2
-name: sneakertrail
+name: sneakertail
 description: Umbrella Helm chart for the Sneakertail microservices platform
 type: application
 version: 0.1.0

@@ -1,9 +1,9 @@
 replicaCount: 2
 
 image:
-  repository: sneakertail/raffle-service
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/sneakertail/raffle-service
+  tag: dev
+  pullPolicy: Always
 
 rollout:
   autoPromotionEnabled: false

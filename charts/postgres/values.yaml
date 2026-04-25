@@ -1,7 +1,7 @@
 image:
   repository: postgres
   tag: 14-alpine
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   port: 5432
@@ -9,7 +9,7 @@ service:
 auth:
   username: admin
   database: sneakerdb
-  password: devpassword
+  password: replace-with-cluster-secret
 
 persistence:
   enabled: true

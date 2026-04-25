@@ -1,9 +1,9 @@
 replicaCount: 2
 
 image:
-  repository: sneakertail/frontend
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/sneakertail/frontend
+  tag: dev
+  pullPolicy: Always
 
 rollout:
   autoPromotionEnabled: false
@@ -25,6 +25,36 @@ nginx:
 
         gzip on;
         gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        location /api/auth/ {
+            proxy_pass http://auth-service-active:3001/api/auth/;
+        }
+
+        location /api/products {
+            proxy_pass http://product-service-active:3002/api/products;
+        }
+
+        location /api/raffle/ {
+            proxy_pass http://raffle-service-active:3003/api/raffle/;
+        }
+
+        location /api/payment/ {
+            proxy_pass http://payment-service-active:3005/api/payment/;
+        }
+
+        location /api/cart/ {
+            proxy_pass http://interaction-service-active:3004/api/cart/;
+        }
+
+        location /api/wishlist/ {
+            proxy_pass http://interaction-service-active:3004/api/wishlist/;
+        }
 
         location / {
             try_files $uri $uri/ /index.html;

@@ -1,9 +1,9 @@
 replicaCount: 1
 
 image:
-  repository: sneakertail/interaction-service
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/sneakertail/interaction-service
+  tag: dev
+  pullPolicy: Always
 
 rollout:
   autoPromotionEnabled: false
@@ -26,7 +26,7 @@ config:
 secret:
   enabled: true
   stringData:
-    DB_PASSWORD: devpassword
+    DB_PASSWORD: replace-with-cluster-secret
 
 resources:
   requests:

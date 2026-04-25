@@ -1,9 +1,9 @@
 replicaCount: 2
 
 image:
-  repository: sneakertail/payment-service
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/sneakertail/payment-service
+  tag: dev
+  pullPolicy: Always
 
 rollout:
   autoPromotionEnabled: false

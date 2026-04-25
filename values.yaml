@@ -4,33 +4,33 @@ global:
 
 frontend:
   image:
-    repository: sneakertail/frontend
-    tag: latest
+    repository: ghcr.io/sneakertail/frontend
+    tag: dev
 
 auth-service:
   image:
-    repository: sneakertail/auth-service
-    tag: latest
+    repository: ghcr.io/sneakertail/auth-service
+    tag: dev
 
 product-service:
   image:
-    repository: sneakertail/product-service
-    tag: latest
+    repository: ghcr.io/sneakertail/product-service
+    tag: dev
 
 interaction-service:
   image:
-    repository: sneakertail/interaction-service
-    tag: latest
+    repository: ghcr.io/sneakertail/interaction-service
+    tag: dev
 
 payment-service:
   image:
-    repository: sneakertail/payment-service
-    tag: latest
+    repository: ghcr.io/sneakertail/payment-service
+    tag: dev
 
 raffle-service:
   image:
-    repository: sneakertail/raffle-service
-    tag: latest
+    repository: ghcr.io/sneakertail/raffle-service
+    tag: dev
 
 postgres:
   persistence:
