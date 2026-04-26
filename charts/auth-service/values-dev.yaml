@@ -1,11 +1,8 @@
 global:
   namespace: dev
-
 image:
-  tag: 79c0e65
-
+  tag: abd20c0cc3937de8ec04edbbc425b652a7f2cc8e
 replicaCount: 1
-
 resources:
   requests:
     cpu: 75m
