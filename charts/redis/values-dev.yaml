@@ -1,0 +1,14 @@
+global:
+  namespace: dev
+  storageClass: ""
+
+resources:
+  requests:
+    cpu: 75m
+    memory: 96Mi
+  limits:
+    cpu: 200m
+    memory: 192Mi
+
+persistence:
+  size: 2Gi

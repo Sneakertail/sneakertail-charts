@@ -1,0 +1,15 @@
+global:
+  namespace: prod
+
+image:
+  tag: main
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 150m
+    memory: 192Mi
+  limits:
+    cpu: 400m
+    memory: 384Mi
