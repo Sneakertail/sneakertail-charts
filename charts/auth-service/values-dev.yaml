@@ -2,7 +2,7 @@ global:
   namespace: dev
 
 image:
-  tag: dev
+  tag: 79c0e65
 
 replicaCount: 1
 

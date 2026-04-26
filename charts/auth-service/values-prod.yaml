@@ -2,7 +2,7 @@ global:
   namespace: prod
 
 image:
-  tag: main
+  tag: v0.0.0
 
 replicaCount: 1
 
