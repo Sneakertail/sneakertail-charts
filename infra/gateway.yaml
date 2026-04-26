@@ -5,6 +5,11 @@ metadata:
   namespace: dev
 spec:
   gatewayClassName: kgateway
+  infrastructure:
+    parametersRef:
+      name: gateway-config
+      group: gateway.kgateway.dev
+      kind: GatewayParameters
   listeners:
   - name: http
     port: 80
