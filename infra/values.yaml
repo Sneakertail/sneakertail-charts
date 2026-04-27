@@ -23,6 +23,7 @@ routes:
   sneakertail:
     enabled: true
     namespace: dev
+    backendNamespace: dev
     hostname: sneakertail.online
   argocd:
     enabled: true

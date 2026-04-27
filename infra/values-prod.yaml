@@ -4,3 +4,4 @@ global:
 routes:
   sneakertail:
     namespace: prod
+    backendNamespace: prod
