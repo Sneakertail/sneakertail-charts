@@ -1,7 +1,7 @@
 global:
   namespace: dev
 image:
-  tag: f56305bf4a9d87cdc1a86274be0d2135bf80a940
+  tag: 9dbb3f9b533e12ee7e65ac7967e50443151784f7
 replicaCount: 1
 resources:
   requests:
