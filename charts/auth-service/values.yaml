@@ -28,8 +28,8 @@ secret:
   enabled: true
   stringData:
     JWT_SECRET: replace-with-cluster-secret
-    ADMIN_PASSWORD: replace-with-cluster-secret
-    DEMO_PASSWORD: replace-with-cluster-secret
+    ADMIN_PASSWORD: admin12345
+    DEMO_PASSWORD: user12345
 
 resources:
   requests:
