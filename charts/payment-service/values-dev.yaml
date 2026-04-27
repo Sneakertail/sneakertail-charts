@@ -1,0 +1,12 @@
+global:
+  namespace: dev
+image:
+  tag: dcd138e89c309042163c0109c97a664ca28b5a53
+replicaCount: 1
+resources:
+  requests:
+    cpu: 75m
+    memory: 96Mi
+  limits:
+    cpu: 200m
+    memory: 192Mi

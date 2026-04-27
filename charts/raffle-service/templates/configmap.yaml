@@ -1,0 +1,11 @@
+{{- if .Values.config.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: raffle-service-config
+  namespace: {{ .Values.global.namespace | default .Release.Namespace }}
+data:
+  {{- range $key, $value := .Values.config.data }}
+  {{ $key }}: {{ tpl ($value | toString) $ | quote }}
+  {{- end }}
+{{- end }}

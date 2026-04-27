@@ -1,0 +1,43 @@
+global:
+  namespace: dev
+  storageClass: ""
+
+frontend:
+  image:
+    repository: ghcr.io/sneakertail/frontend
+    tag: dev
+
+auth-service:
+  image:
+    repository: ghcr.io/sneakertail/auth-service
+    tag: dev
+
+product-service:
+  image:
+    repository: ghcr.io/sneakertail/product-service
+    tag: dev
+
+interaction-service:
+  image:
+    repository: ghcr.io/sneakertail/interaction-service
+    tag: dev
+
+payment-service:
+  image:
+    repository: ghcr.io/sneakertail/payment-service
+    tag: dev
+
+raffle-service:
+  image:
+    repository: ghcr.io/sneakertail/raffle-service
+    tag: dev
+
+postgres:
+  persistence:
+    storageClass: ""
+    size: 8Gi
+
+redis:
+  persistence:
+    storageClass: ""
+    size: 2Gi

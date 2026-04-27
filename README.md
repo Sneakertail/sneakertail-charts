@@ -1,2 +1,0 @@
-# sneakertail-charts
-main

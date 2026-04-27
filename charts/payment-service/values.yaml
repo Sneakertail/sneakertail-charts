@@ -1,0 +1,33 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/sneakertail/payment-service
+  tag: dev
+  pullPolicy: Always
+
+rollout:
+  autoPromotionEnabled: false
+  previewReplicaCount: 1
+  scaleDownDelaySeconds: 30
+
+service:
+  type: ClusterIP
+  port: 3005
+  targetPort: 3005
+
+config:
+  enabled: true
+  data:
+    PORT: "3005"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

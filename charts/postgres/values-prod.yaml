@@ -1,0 +1,14 @@
+global:
+  namespace: prod
+  storageClass: ""
+
+resources:
+  requests:
+    cpu: 300m
+    memory: 384Mi
+  limits:
+    cpu: 750m
+    memory: 768Mi
+
+persistence:
+  size: 8Gi
