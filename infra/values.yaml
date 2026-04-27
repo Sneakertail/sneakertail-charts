@@ -1,0 +1,56 @@
+global:
+  namespace: dev
+
+gateway:
+  name: kgateway
+  gatewayClassName: kgateway
+
+gatewayParameters:
+  name: gateway-config
+  serviceType: NodePort
+
+storageClass:
+  enabled: true
+  name: nfs-csi
+  isDefaultClass: true
+  provisioner: nfs.csi.k8s.io
+  server: 172.31.0.82
+  share: /var/nfs
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+
+routes:
+  sneakertail:
+    enabled: true
+    namespace: dev
+    hostname: sneakertail.online
+  argocd:
+    enabled: true
+    namespace: argocd
+    hostname: argocd.sneakertail.online
+    serviceName: argocd-server
+    servicePort: 80
+  argorollouts:
+    enabled: true
+    namespace: argo-rollouts
+    hostname: argorollouts.sneakertail.online
+    serviceName: argo-rollouts-dashboard
+    servicePort: 3100
+  grafana:
+    enabled: true
+    namespace: monitoring
+    hostname: grafana.sneakertail.online
+    serviceName: grafana
+    servicePort: 80
+  headlamp:
+    enabled: true
+    namespace: kube-system
+    hostname: headlamp.sneakertail.online
+    serviceName: my-headlamp
+    servicePort: 80
+  prometheus:
+    enabled: true
+    namespace: monitoring
+    hostname: prometheus.sneakertail.online
+    serviceName: prometheus-server
+    servicePort: 80

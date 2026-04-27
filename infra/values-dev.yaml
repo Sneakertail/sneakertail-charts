@@ -1,0 +1,6 @@
+global:
+  namespace: dev
+
+routes:
+  sneakertail:
+    namespace: dev

@@ -1,0 +1,17 @@
+{{- if .Values.routes.prometheus.enabled }}
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: prometheus-route
+  namespace: {{ .Values.routes.prometheus.namespace | quote }}
+spec:
+  parentRefs:
+    - name: {{ .Values.gateway.name }}
+      namespace: {{ .Values.global.namespace | quote }}
+  hostnames:
+    - {{ .Values.routes.prometheus.hostname | quote }}
+  rules:
+    - backendRefs:
+        - name: {{ .Values.routes.prometheus.serviceName }}
+          port: {{ .Values.routes.prometheus.servicePort }}
+{{- end }}

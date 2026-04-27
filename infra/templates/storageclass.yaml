@@ -1,0 +1,14 @@
+{{- if .Values.storageClass.enabled }}
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ .Values.storageClass.name }}
+  annotations:
+    storageclass.kubernetes.io/is-default-class: {{ ternary "true" "false" .Values.storageClass.isDefaultClass | quote }}
+provisioner: {{ .Values.storageClass.provisioner }}
+parameters:
+  server: {{ .Values.storageClass.server | quote }}
+  share: {{ .Values.storageClass.share | quote }}
+reclaimPolicy: {{ .Values.storageClass.reclaimPolicy }}
+volumeBindingMode: {{ .Values.storageClass.volumeBindingMode }}
+{{- end }}

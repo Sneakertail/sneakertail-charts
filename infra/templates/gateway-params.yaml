@@ -1,0 +1,9 @@
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: GatewayParameters
+metadata:
+  name: {{ .Values.gatewayParameters.name }}
+  namespace: {{ .Values.global.namespace | quote }}
+spec:
+  kube:
+    service:
+      type: {{ .Values.gatewayParameters.serviceType | quote }}
